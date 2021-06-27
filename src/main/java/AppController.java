@@ -39,11 +39,14 @@ public class AppController {
     @FXML
     Button addFisherman;
     @FXML
+    Button addFish;
+    @FXML
     ObservableList<Fisherman> fishermen;
     @FXML
     ObservableList<Fish> fishes;
     @FXML
     Connection c;
+    @FXML private int numberOfFishermen = 10;
 
     @FXML
     public void initialize() throws SQLException {
@@ -64,8 +67,24 @@ public class AppController {
         prep.setDate(3, java.sql.Date.valueOf(randomDay()));
         prep.setBoolean(4, rand.nextBoolean());
         prep.executeUpdate();
+        numberOfFishermen++;
         buildTables();
         updateFishermen();
+    }
+
+    @FXML
+    public void addFish() throws SQLException {
+        String[] typeOfFish = {"Szczupak", "Losos", "Plotka", "Rekin", "Karas", "Karp", "Sum"};
+        PreparedStatement prepFish = c.prepareStatement("INSERT INTO ZLOWIONE_RYBY (IMIE, NAZWISKO, GATUNEK_RYBY, ROZMIAR_CM, ZWERYFIKOWANA, DATA_ZLOWIENIA, OWNER) SELECT FANATYCY_WEDKARSTWA.IMIE, FANATYCY_WEDKARSTWA.NAZWISKO, ?, ?, ?, ?, FANATYCY_WEDKARSTWA.ID FROM FANATYCY_WEDKARSTWA WHERE ID = ?");
+        Random rand = new Random();
+        prepFish.setString(1, typeOfFish[rand.nextInt(typeOfFish.length)]);
+        prepFish.setFloat(2, rand.nextFloat() * 40 + 10);
+        prepFish.setBoolean(3, rand.nextBoolean());
+        prepFish.setDate(4, java.sql.Date.valueOf(randomDay()));
+        prepFish.setObject(5, rand.nextInt(numberOfFishermen));
+        prepFish.executeUpdate();
+        buildTables();
+        updateFishes();
     }
 
     public void prepareData() throws SQLException {
