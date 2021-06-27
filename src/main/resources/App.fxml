@@ -4,28 +4,30 @@
 <?import javafx.scene.layout.*?>
 
 <AnchorPane prefHeight="600.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AppController">
-   <children>
-      <Pane prefHeight="600.0" prefWidth="1200.0">
-         <children>
-            <TableView fx:id="tableViewFisherman" prefHeight="542.0" prefWidth="446.0">
-              <columns>
-                <TableColumn fx:id="tableColumnFishermanName" prefWidth="75.0" text="IMIE" />
-                <TableColumn fx:id="tableColumnFishermanSurname" prefWidth="116.0" text="NAZWISKO" />
-                  <TableColumn fx:id="tableColumnFishermanLicence" prefWidth="167.0" text="OD_KIEDY_LICENCJA" />
-                  <TableColumn fx:id="tableColumnFishermanCommunity" minWidth="6.0" prefWidth="87.0" text="ZWIAZEK" />
-              </columns>
-            </TableView>
-            <TableView fx:id="tableViewFish" layoutX="445.0" prefHeight="600.0" prefWidth="757.0">
-              <columns>
-                <TableColumn fx:id="tableColumnFishName" prefWidth="75.0" text="IMIE" />
-                <TableColumn fx:id="tableColumnFishSurname" prefWidth="103.0" text="NAZWISKO" />
-                  <TableColumn fx:id="tableColumnFishType" prefWidth="131.0" text="GATUNEK_RYBY" />
-                  <TableColumn fx:id="tableColumnFishSize" prefWidth="128.0" text="ROZMIAR_CM" />
-                  <TableColumn fx:id="tableColumnFishVerified" prefWidth="152.0" text="ZWERYFIKOWANA" />
-                  <TableColumn fx:id="tableColumnFishCatchDate" minWidth="7.0" prefWidth="167.0" text="DATA_ZLOWIENIA" />
-              </columns>
-            </TableView>
-            <Button fx:id="addFisherman" layoutX="148.0" layoutY="560.0" mnemonicParsing="false" onAction="#addFisherman" prefHeight="26.0" prefWidth="151.0" text="Dodaj fanatyka"/>
-         </children></Pane>
-   </children>
+    <children>
+        <Pane prefHeight="600.0" prefWidth="1200.0">
+            <children>
+                <TableView fx:id="tableViewFisherman" prefHeight="542.0" prefWidth="446.0">
+                    <columns>
+                        <TableColumn fx:id="tableColumnFishermanName" prefWidth="75.0" text="IMIE" />
+                        <TableColumn fx:id="tableColumnFishermanSurname" prefWidth="116.0" text="NAZWISKO" />
+                        <TableColumn fx:id="tableColumnFishermanLicence" prefWidth="167.0" text="OD_KIEDY_LICENCJA" />
+                        <TableColumn fx:id="tableColumnFishermanCommunity" minWidth="6.0" prefWidth="87.0" text="ZWIAZEK" />
+                    </columns>
+                </TableView>
+                <TableView fx:id="tableViewFish" layoutX="445.0" prefHeight="542.0" prefWidth="757.0">
+                    <columns>
+                        <TableColumn fx:id="tableColumnFishName" prefWidth="75.0" text="IMIE" />
+                        <TableColumn fx:id="tableColumnFishSurname" prefWidth="103.0" text="NAZWISKO" />
+                        <TableColumn fx:id="tableColumnFishType" prefWidth="131.0" text="GATUNEK_RYBY" />
+                        <TableColumn fx:id="tableColumnFishSize" prefWidth="128.0" text="ROZMIAR_CM" />
+                        <TableColumn fx:id="tableColumnFishVerified" prefWidth="152.0" text="ZWERYFIKOWANA" />
+                        <TableColumn fx:id="tableColumnFishCatchDate" minWidth="7.0" prefWidth="167.0" text="DATA_ZLOWIENIA" />
+                    </columns>
+                </TableView>
+                <Button fx:id="addFisherman" layoutX="148.0" layoutY="560.0" mnemonicParsing="false" onAction="#addFisherman" prefHeight="26.0" prefWidth="151.0" text="Dodaj fanatyka" />
+                <Button fx:id="addFish" layoutX="748.0" layoutY="560.0" mnemonicParsing="false" onAction="#addFish" prefHeight="26.0" prefWidth="151.0" text="Dodaj nowa rybe" />
+            </children>
+        </Pane>
+    </children>
 </AnchorPane>
